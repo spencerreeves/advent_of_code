@@ -17,14 +17,6 @@ func readAndStoreAsMap(fileName string) (mp map[int64]string, err error) {
 		return mp, err
 	}
 
-	// Make sure to close at the end of the function
-	defer func() {
-		cerr := file.Close()
-		if err == nil {
-			err = cerr
-		}
-	}()
-
 	// Create buffered reader and read line by line
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
@@ -76,8 +68,8 @@ func find2020Triple(mp map[int64]string) (v1 int64, v2 int64, v3 int64, err erro
 	for key := range mp {
 		for key2 := range mp {
 			_, exists := mp[2020-key-key2]
-			if key != key2 && exists  {
-				return key, key2, 2020-key-key2, nil
+			if key != key2 && exists {
+				return key, key2, 2020 - key - key2, nil
 			}
 		}
 	}

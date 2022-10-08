@@ -1,12 +1,12 @@
 package main
 
 import (
-	"./day1"
-	"./day2"
-	"./day3"
-	"./day4"
-	"./day5"
 	"fmt"
+	"github.com/spencerreeves/advent_of_code/2020/day1"
+	"github.com/spencerreeves/advent_of_code/2020/day2"
+	"github.com/spencerreeves/advent_of_code/2020/day3"
+	"github.com/spencerreeves/advent_of_code/2020/day4"
+	"github.com/spencerreeves/advent_of_code/2020/day5"
 	"log"
 )
 
