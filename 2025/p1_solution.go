@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func GetFirstStar(input []string) int {
+func P1GetFirstStar(input []string) int {
 	// Create a liked list to represent our dial
 	dial := NewDial(99, 50)
 	answer := 0
@@ -32,7 +32,7 @@ func GetFirstStar(input []string) int {
 	return answer
 }
 
-func GetSecondStar(input []string) int {
+func P1GetSecondStar(input []string) int {
 	// Create a liked list to represent our dial
 	dial := NewDial(99, 50)
 	answer := 0
