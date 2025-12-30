@@ -15,6 +15,9 @@ func main() {
 
 	in = ReadAll("./2025/p3_input.txt", "\n")
 	fmt.Printf("Problem 3: %12d | %12d\n", P3GetFirstStar(in), P3GetSecondStar(in))
+
+	in = ReadAll("./2025/p4_input.txt", "\n")
+	fmt.Printf("Problem 4: %12d | %12d\n", P4GetFirstStar(in), P4GetSecondStar(in))
 }
 
 func ReadAll(path string, split string) []string {
