@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -57,26 +58,20 @@ func TestIsValidPattern(t *testing.T) {
 
 func TestIsInvalidID(t *testing.T) {
 	type test struct {
-		ID      string
-		Valid   bool
-		Pattern string
+		ID    int
+		Valid bool
 	}
 
 	tests := []test{
-		{ID: "11", Valid: true, Pattern: "1"},
-		{ID: "2121212121", Valid: true, Pattern: "21"},
-		{ID: "824824824", Valid: true, Pattern: "824"},
-		{ID: "123", Valid: false, Pattern: ""},
+		{ID: 11, Valid: true},
+		{ID: 2121212121, Valid: true},
+		{ID: 824824824, Valid: true},
+		{ID: 123, Valid: false},
 	}
 
 	for _, tc := range tests {
-		t.Run(tc.ID, func(t *testing.T) {
-			valid, pattern := IsInvalidID(tc.ID)
-
-			assert.Equal(t, tc.Valid, valid)
-			if tc.Valid {
-				assert.Equal(t, tc.Pattern, pattern)
-			}
+		t.Run(fmt.Sprintf("%v", tc.ID), func(t *testing.T) {
+			assert.Equal(t, tc.Valid, IsInvalidID(tc.ID))
 		})
 	}
 }
